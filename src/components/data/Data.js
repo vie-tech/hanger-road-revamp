@@ -9,7 +9,7 @@ export const nav = [
   },
   {
     text: "Services",
-    path: "/crude oil and tank services",
+    path: "/crude oil tank services",
   },
 
   {
