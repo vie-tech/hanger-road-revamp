@@ -1,0 +1,76 @@
+.inspection-service{
+    font-size: 16px
+}
+
+.service2-content1{
+    display: flex;
+    margin: 50px auto; /* Center the content and provide some spacing */
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    gap: 50px;
+    align-items: center;
+}
+
+.service2-content1 h3,
+.service2-content2 h3 {
+  color: #2d3954;/* Set the heading color */
+  font-size: 1.5em; /* Adjust the font size for larger h3 text */
+  margin-bottom: 20px; /* Add spacing below the heading */;
+  font-weight: 600;
+  font-size: 36px;
+}
+
+.sectionA ul{
+    padding: 5px;
+}
+
+.sectionA ul li{
+    margin-bottom: 10px;
+    list-style:circle;
+    color: #2d3954;
+}
+
+.service2-content1 p,
+.service2-content2 p {
+  line-height: 1.9; /* Adjust the line height for better readability */
+  margin-bottom: 15px; /* Add spacing below paragraphs */;
+  text-align: justify;
+  font-weight: 300;
+}
+
+.service2-img{
+    width: 500px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 1074px) {
+    .service2-content1 {
+      flex-direction: column;
+      width: 90%;
+    }
+  
+    .service2-content1 .sectionA,
+    .service2-content1 .sectionB, 
+    .service2-content1 .sectionC, 
+    .service2-content1 .sectionD,
+    .service2-content1 .sectionW {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .service2-img {
+      width: 100%;
+    }
+  
+    .service2-content1 h3 {
+      font-size: 24px;
+    }
+
+    .sectionC{
+        order: 2;
+    }
+  }
+  
+ 

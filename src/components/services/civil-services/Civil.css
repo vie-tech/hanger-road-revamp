@@ -1,0 +1,7 @@
+.navigation{
+    display: flex;
+    justify-content: center;
+    margin-block-end: 2rem;
+    gap: 50px;
+    cursor: pointer;
+  }
