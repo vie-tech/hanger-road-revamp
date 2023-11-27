@@ -13,6 +13,7 @@ import Waste from "../services/waste-services/Waste"
 import Marine from "../services/marine-services/Marine"
 import Civil from "../services/civil-services/Civil"
 import ScrollToTop from "../../Scroll";
+import Vendor from "../contact/vendor"
 
 const Pages = () => {
   return (
@@ -28,6 +29,7 @@ const Pages = () => {
           <Route path='/waste management services' element={<Waste/>} />
           <Route path='/marine services' element={<Marine/>} />
           <Route path='/civil construction services' element={<Civil/>} />
+          <Route path='/vendor registration form' element={<Vendor/>} />
         </Routes>
         <Footer />
       

@@ -14,7 +14,7 @@ export const nav = [
 
   {
     text: "Client",
-    path: "/contact",
+    path: "/vendor registration form",
   },
   {
     text: "Contact",
@@ -145,7 +145,7 @@ export const location = [
     Offices: "07 Offices",
     cover: "./images/location/canvaedit2.jpg",
   },
-  {
+  /* {
     id: 2,
     name: "Jerrsy, United State",
     Villas: "12 Villas",
@@ -160,7 +160,7 @@ export const location = [
     Apartments: " 10 Apartments",
     Offices: "07 Offices",
     cover: "./images/location/canvaedit3.jpg",
-  },
+  }, */
   {
     id: 4,
     name: "NewYork, United States",
