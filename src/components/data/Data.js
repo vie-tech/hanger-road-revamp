@@ -52,7 +52,7 @@ export const featured = [
   },
   {
     cover: "../images/hero/h6.png",
-    name: "CIVIL CONTRUSCTION",
+    name: "CIVIL CONTRUCTION",
     total: "80 Property",
     link: "civil construction services",
     left: false

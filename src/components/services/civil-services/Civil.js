@@ -6,11 +6,24 @@ import "./Civil.css";
 import { ArrowUndo } from 'react-ionicons'
 import {Link} from "react-router-dom"
 import "./Civil.css"
+import {Helmet} from "react-helmet"
 
 const Civil = () => {
   return (
     <>
       <section className="services mb">
+      <Helmet>
+        <title>Civil Contruction Services</title>
+        <meta
+          name="description"
+          content="HRI possess the capability to efficiently manage a wide range of civil construction projects, including the construction of shoreline protection, drainage systems, roads, and various types of buildings (both industrial and residential). Additionally, we excel in piling and foundation work, as well as structural projects."
+        />
+
+        <meta
+          name="keywords"
+          content=" preliminary groundwork, architectural design, construction management, supervision, and ongoing maintenance tasks. "
+        />
+      </Helmet>
         <div className="inspection-service">
           <Back
             name="Services"

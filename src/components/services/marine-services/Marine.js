@@ -8,11 +8,24 @@ import {Link} from "react-router-dom";
 import { ArrowUndo } from 'react-ionicons'
 import { ArrowRedo } from 'react-ionicons'
 import {motion} from "framer-motion"
+import { Helmet } from "react-helmet";
 
 const Marine = () => {
   return (
     <>
       <section className="services mb">
+      <Helmet>
+          <title>Marine Services</title>
+          <meta
+            name="description"
+            content="Our partners with a strong and successful record of Vessel Operations possess and manages a fleet of vessels ranging from Anchor Handling Tug Supply (AHTS) vessels, Platform Supply Vessels (PSV),  "
+          />
+
+          <meta
+            name="keywords"
+            content="oil and gas, waste treatment, crude storage, vessel tanks, natural gas oil, gas exploration, Environmental Restoration and Remediation, remote, sensing, technology, remote sensing technology Inspection and Test Services, Short Range Wave Ultrasonic Testing, SRUT, Tank Calibration, Tank Cleaning, Oil Spill Clean-up and Recovery, Remediation and Rehabilitation of Past Impacted Sites, Oily Waste Handling and Management from Collection to Disposal, Anchor Handling Tug Supply (AHTS) vessels, Platform Supply Vessels (PSV), Multi-purpose Vessels, Mooring Boats, Diving Support Vessels, Barges, Offshore Support Vessels"
+          />
+        </Helmet>
         <div className="inspection-service">
           <Back name="Services" title="Marine Services" cover={img} />
         </div>

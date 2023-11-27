@@ -9,10 +9,25 @@ import "./Waste.css";
 import {Link} from "react-router-dom"
 import { ArrowUndo } from 'react-ionicons'
 import { ArrowRedo} from 'react-ionicons'
+import { Helmet } from "react-helmet";
+
+
 const Waste = () => {
   return (
     <>
       <section className="services mb">
+      <Helmet>
+          <title>Waste Management Services</title>
+          <meta
+            name="description"
+            content="HRI boasts of our comprehensive waste management services. We take immense pride in offering a diverse array of waste management and environmental restoration solutions, all executed by a highly skilled team of professionals well-versed in environmental management.  "
+          />
+
+          <meta
+            name="keywords"
+            content="oil and gas, waste treatment, crude storage, vessel tanks, natural gas oil, gas exploration, Environmental Restoration and Remediation, remote, sensing, technology, remote sensing technology Inspection and Test Services, Short Range Wave Ultrasonic Testing, SRUT, Tank Calibration, Tank Cleaning, Oil Spill Clean-up and Recovery, Remediation and Rehabilitation of Past Impacted Sites, Oily Waste Handling and Management from Collection to Disposal"
+          />
+        </Helmet>
         <div className="inspection-service">
           <Back name="Services" title="Waste Management Services" cover={img} />
         </div>
