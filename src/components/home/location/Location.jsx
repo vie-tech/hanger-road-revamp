@@ -45,12 +45,12 @@ const Location = () => {
             </Swiper>
            
              <div className="react-button-next"> <i> <ArrowForwardCircle 
-             color={`#27ae60`}
+             color={`#122947`}
              width={`30px`}
              height={`30px`}/></i>
              </div>
             <div className="react-button-prev"> <i><ArrowBackCircle 
-            color={`#27ae60`}
+            color={`#122947`}
             width={`30px`}
             height={`30px`}
             /></i> </div>
