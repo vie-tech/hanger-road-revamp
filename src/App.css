@@ -9,6 +9,10 @@ body {
   background-color: #fff;
   overflow-x: hidden;
 }
+
+section{
+  overflow-x: hidden;
+}
 .container {
   max-width: 80%;
   margin: auto;
