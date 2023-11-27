@@ -12,6 +12,7 @@
 .hero h1 {
   color: #fff;
   font-size: 60px;
+
 }
 .hero p {
   color: #fff;
@@ -63,12 +64,8 @@ form h4 {
     width: 100%;
   }
   .hero h1{
-    font-size:3rem
+    font-size:30px
   }
 
-  .hero{
 
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the background image from repeating */
-  }
 }
