@@ -4,8 +4,8 @@ import { location } from "../../data/Data";
 import "./style.css";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ArrowForwardOutline } from 'react-ionicons'
 import { ArrowBackOutline} from 'react-ionicons'
+import { ArrowBackCircle , ArrowForwardCircle } from 'react-ionicons'
 
 // Import Swiper styles
 import "swiper/css";
@@ -44,8 +44,15 @@ const Location = () => {
               ))}
             </Swiper>
            
-             <div className="react-button-next">&#9654;</div>
-            <div className="react-button-prev">&#9664;</div>
+             <div className="react-button-next"><ArrowForwardCircle 
+             color={`#27ae60`}
+             width={`30px`}
+             height={`30px`}/></div>
+            <div className="react-button-prev"><ArrowBackCircle 
+            color={`#27ae60`}
+            width={`30px`}
+            height={`30px`}
+            /></div>
              
             
           </div>
