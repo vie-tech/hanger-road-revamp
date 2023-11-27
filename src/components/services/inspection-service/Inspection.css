@@ -1,5 +1,7 @@
 .inspection-service{
-    font-size: 16px
+    font-size: 16px;
+  
+    margin-block-end: 15px;
 }
 
 .service2-content1{

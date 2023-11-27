@@ -1,14 +1,19 @@
 header {
   background-color: #fff;
-  height: 10vh;
+  height: 14vh;
   box-shadow: 0 5px 30px rgb(0 22 84 / 10%);
   padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 99999;
+  align-items: center;
+  transition: 0.3s ease-in-out;
 }
+
+
 header img {
   width: 100px;
+  
 }
 header a {
   margin-left: 30px;
@@ -33,13 +38,15 @@ header h4 {
 }
 header .toggle {
   display: none;
+  transition: 0.3s ease-in-out;
 }
 @media screen and (max-width: 1002px) {
   header {
     padding: 0;
+    transition: 0.3s ease-in-out;
   }
   header img {
-    width: 70px;
+    width: 100px;
   }
   header .button {
     display: none;
@@ -49,7 +56,8 @@ header .toggle {
   }
   header .toggle {
     display: block;
-    width: 70px
+    width: 70px;
+    transition: 0.5s ease-in-out;
   
   }
   header .small {
@@ -59,10 +67,12 @@ header .toggle {
     width: 100%;
     background-color: #27ae60;
     padding: 20px;
+    transition: 0.3s;
   }
   header li a {
     display: inline-block;
     margin-bottom: 20px;
     color: #fff;
+    transition: 0.5s ease-in-out;
   }
 }

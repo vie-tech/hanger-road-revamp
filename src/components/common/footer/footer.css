@@ -63,4 +63,14 @@ footer ul li {
     grid-template-columns: repeat( 1fr);
     max-width: 100%;
   }
+
+  .send{
+    display: block;
+    width:100%;
+    margin: 0 auto;
+  }
+
+  .send p{
+    margin-block-end: 10px;
+  }
 }

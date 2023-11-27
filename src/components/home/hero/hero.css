@@ -62,4 +62,13 @@ form h4 {
   form input {
     width: 100%;
   }
+  .hero h1{
+    font-size:3rem
+  }
+
+  .hero{
+
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+  }
 }

@@ -7,6 +7,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #fff;
+  overflow-x: hidden;
 }
 .container {
   max-width: 80%;
@@ -126,6 +127,9 @@ img {
 .back {
   height: 40vh;
   position: relative;
+  padding: 15px;
+ 
+
 }
 .back img {
   height: 40vh;
@@ -134,6 +138,8 @@ img {
   left: 0;
   z-index: -1;
   object-fit: cover;
+ 
+
 }
 .back::after {
   content: "";
@@ -148,10 +154,12 @@ img {
 .back .container {
   color: #fff;
   padding: 120px 0;
+  
 }
 .back h1 {
   font-size: 40px;
   font-weight: 500;
+  margin-block-end: 15px;
 }
 .mb {
   margin-bottom: 80px;
@@ -193,7 +201,16 @@ img {
   .back::after,
   .back img,
   .back {
-    height: 30vh;
+    height: 50vh;
+  }
+  
+}
+
+@media (max-width: 600px){
+  .back::after,
+  .back img,
+  .back {
+    height: 50vh;
   }
   
 }

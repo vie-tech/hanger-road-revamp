@@ -14,14 +14,13 @@ const Home = () => {
     <Hero />
     <Awards />
       <Featured />
-      {/* <Recent /> */}
      
       <Location />
-    {/*   <Team /> */}
-    {/*   <Price /> */}
-
+    
     </body>
-     
+     {/* <Recent /> */}
+     {/*   <Team /> */}
+    {/*   <Price /> */}
     </>
   )
 }
