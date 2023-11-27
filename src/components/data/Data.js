@@ -143,17 +143,17 @@ export const location = [
     Villas: "12 Villas",
     Apartments: "10 Apartments",
     Offices: "07 Offices",
-    cover: "./images/location/canvaedit2.jpg",
+    cover: "./images/location/image1.jpeg",
   },
-  /* {
+  {
     id: 2,
     name: "Jerrsy, United State",
     Villas: "12 Villas",
     Apartments: "10 Apartments",
     Offices: "07 Offices",
-    cover: "./images/location/canvaedit1.jpg",
+    cover: "./images/location/image0.jpeg",
   },
-  {
+ /*  {
     id: 3,
     name: "Liverpool, London",
     Villas: "12 Villas",
