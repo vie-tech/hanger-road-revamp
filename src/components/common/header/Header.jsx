@@ -11,9 +11,12 @@ const Header = () => {
     <>
       <header>
         <div className='container flex'>
+          <Link to="/">
           <div className='logo'>
             <img src={siteLogo} alt='' />
           </div>
+          </Link>
+          
           <div className='nav'>
             <ul className={navList ? "small" : "flex"}>
               {nav.map((list, index) => (
