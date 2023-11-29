@@ -1,16 +1,18 @@
 const {MongoClient} = require('mongodb')
+require('dotenv').config()
 
 let dbConnection
 
 
-
+const uri = process.env.DB_STRING
 module.exports = {
     connectToDb: (cb)=>{
-        MongoClient.connect('mongodb://localhost:27017/Users')
+        MongoClient.connect(uri)
         .then((client)=>{
           dbConnection = client.db()
           return cb()
-        }).catch(err =>{
+        })
+        .catch(err =>{
             console.log(err)
             return cb(err)
         })

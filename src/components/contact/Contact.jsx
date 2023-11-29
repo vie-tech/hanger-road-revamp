@@ -11,7 +11,7 @@ const Contact = () => {
       <section className='contact mb'>
         <Back name='Contact' title={`Contact Us`} cover={img} />
         <div className='container'>
-          <form className='shadow' method="post" action="/contact">
+          <form className='shadow' method="POST" action="/contact">
             <h4>Fillup The Form</h4> <br />
             <div>
               <input type='text' placeholder='Name' name="name" />
