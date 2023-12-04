@@ -5,8 +5,8 @@
 /.pnp
 .pnp.js
 .env
-/server.js
-/db.js
+backend
+
 
 
 # testing
@@ -16,7 +16,6 @@
 /build
 
 # misc
-/src/components
 .DS_Store
 .env.local
 .env.development.local

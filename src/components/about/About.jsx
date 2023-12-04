@@ -13,7 +13,7 @@ const About = () => {
         <div className="container flex mtop">
           <div className="left row">
             <Heading
-              title="Our Agency Story"
+              title="Our Company Story"
               subtitle="Check out our company story and work process"
             />
 
