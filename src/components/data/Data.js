@@ -14,7 +14,7 @@ export const nav = [
 
   {
     text: "Client",
-    path: "/vendor registration form",
+    path: "/vendor-registration-form",
   },
   {
     text: "Contact",

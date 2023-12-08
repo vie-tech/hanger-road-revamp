@@ -29,7 +29,7 @@ const Pages = () => {
           <Route path='/waste management services' element={<Waste/>} />
           <Route path='/marine services' element={<Marine/>} />
           <Route path='/civil construction services' element={<Civil/>} />
-          <Route path='/vendor registration form' element={<Vendor/>} />
+          <Route path='/vendor-registration-form' element={<Vendor/>} />
         </Routes>
         <Footer />
       
