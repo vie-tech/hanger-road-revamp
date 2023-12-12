@@ -25,7 +25,7 @@ async function handleSubmit(event) {
 
   
   try {
-    const response = await fetch(`http://localhost:9999/contact`, {
+    const response = await fetch(`https://hri-backend-server.onrender.com/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

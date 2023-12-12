@@ -14,6 +14,10 @@ import Marine from "../services/marine-services/Marine"
 import Civil from "../services/civil-services/Civil"
 import ScrollToTop from "../../Scroll";
 import Vendor from "../contact/vendor"
+import Admin from "../contact/admin"
+import Panel from "../contact/panel"
+import PanelNavbar from "../contact/panelNavbar"
+import SinglePanel from "../contact/singlePanel"
 
 const Pages = () => {
   return (
@@ -30,6 +34,12 @@ const Pages = () => {
           <Route path='/marine services' element={<Marine/>} />
           <Route path='/civil construction services' element={<Civil/>} />
           <Route path='/vendor-registration-form' element={<Vendor/>} />
+          <Route path='/admin-panel' element={<Admin/>} />
+         
+          <Route exact element={<PanelNavbar/>}>
+          <Route path='/panel' element={<Panel/>} />
+          <Route path='/panel/:contactId' element={<SinglePanel/>} />
+          </Route>
         </Routes>
         <Footer />
       

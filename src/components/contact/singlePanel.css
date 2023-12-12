@@ -1,0 +1,51 @@
+.card-container {
+    width: 70%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding for visual space */
+    border-radius: 10px; /* Add rounded corners */
+    background-color: #f7f9fa; /* Light background color */
+    margin-block-start: 100px;
+    margin-block-end: 50px;
+  }
+  
+  .info-card {
+    display: flex; /* Align name and email side-by-side */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Create space between elements */
+    background-color: #e8f1f5; /* Light blue background for info card */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Add space between sections */
+  }
+  
+  .details-section {
+    display: flex; /* Arrange details in two columns */
+    flex-wrap: wrap; /* Allow columns to wrap if needed */
+  }
+  
+  .detail-row {
+    display: flex; /* Align label and content side-by-side */
+    width: 50%; /* Divide space equally between columns */
+    margin-bottom: 10px; /* Add space between rows */
+  }
+  
+  .detail-label {
+    font-weight: bold; /* Highlight labels */
+    width: 30%;
+  }
+  
+  .detail-content {
+    width: 70%;
+  }
+  
+  .info-card h1 {
+    font-size: 24px; /* Adjust font size for name */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .info-card p {
+    font-size: 16px; /* Adjust font size for email */
+    margin: 0; /* Remove default margin */
+    color: #4a90e2; /* Blue color for email */
+  }
+  

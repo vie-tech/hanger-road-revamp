@@ -34,7 +34,7 @@ const Vendor = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:9999/vendor-registration-form`,
+        `https://hri-backend-server.onrender.com/vendor-registration-form`,
         {
           method: "POST",
           headers: {
