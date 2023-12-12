@@ -10,6 +10,8 @@ const Vendor = () => {
     email: "",
     company: "",
     phone: "",
+    address: "",
+    website: ""
   });
 
   const handleChange = async (e) => {
@@ -27,7 +29,9 @@ const Vendor = () => {
       formData.name === "" ||
       formData.email === "" ||
       formData.phone === "" ||
-      formData.company === ""
+      formData.company === ""||
+      formData.address === ""||
+      formData.website === ""
     ) {
       return;
     }
@@ -115,8 +119,36 @@ const Vendor = () => {
                 value={formData.company}
                 onChange={handleChange}
               />
-              <span>Company</span>
+              <span>Company Name</span>
             </label>
+
+            <label>
+              <input
+                className="input"
+                type="text"
+                placeholder=""
+                required={true}
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+              />
+              <span>Company address</span>
+            </label>
+
+            <label>
+              <input
+                className="input"
+                type="text"
+                placeholder=""
+                required={true}
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+              />
+              <span>Website Url</span>
+            </label>
+
+          
 
             <label>
               <input

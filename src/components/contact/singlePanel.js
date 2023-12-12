@@ -48,17 +48,25 @@ function SinglePanel() {
   {singleData && (
         <div className="card-container">
           <div className="info-card">
-            <h1 className="name">{singleData.user.name}</h1>
+            <h1 className="name">{singleData.user.company}</h1>
             <p className="email">{singleData.user.email}</p>
           </div>
           <div className="details-section">
             <div className="detail-row">
-              <div className="detail-label">Company:</div>
-              <div className="detail-content">{singleData.user.company}</div>
+              <div className="detail-label">Name:</div>
+              <div className="detail-content">{singleData.user.name}</div>
             </div>
             <div className="detail-row">
               <div className="detail-label">Phone:</div>
               <div className="detail-content">{singleData.user.phone}</div>
+            </div>
+            <div className="detail-row">
+              <div className="detail-label">Website:</div>
+              <div className="detail-content">{singleData.user.website}</div>
+            </div>
+            <div className="detail-row">
+              <div className="detail-label">Address:</div>
+              <div className="detail-content">{singleData.user.address}</div>
             </div>
           </div>
         </div>
