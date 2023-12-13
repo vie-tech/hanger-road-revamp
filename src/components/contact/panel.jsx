@@ -35,6 +35,7 @@ function Panel() {
         if (response.ok) {
           const dataFromContactServer = await response.json();
           setAdminContactData(dataFromContactServer);
+          setDeletedAction(prev=>!prev)
         } else {
           console.error(
             "Cannot login into server and access contacts from database"
@@ -66,6 +67,7 @@ function Panel() {
         if (response.ok) {
           const dataFromVendorServer = await response.json();
           setAdminVendorData(dataFromVendorServer);
+          setDeletedAction(prev=>!prev)
         } else {
           console.error(
             "Cannot login into server and access vendors from database"
