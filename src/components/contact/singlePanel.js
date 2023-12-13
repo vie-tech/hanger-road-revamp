@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import "./singlePanel.css"
 
 function SinglePanel() {
-  const { contactId } = useParams();
+  const { vendorId } = useParams();
   const [singleData, setSingleData] = useState();
 
   const fetchSingleData = async () => {
@@ -16,7 +16,7 @@ function SinglePanel() {
 
     try {
       const response = await fetch(
-        `https://hri-backend-server.onrender.com/allVendors/${contactId}`,
+        `https://hri-backend-server.onrender.com/allVendors/${vendorId}`,
         {
           headers: {
             "Content-Type": "application/json",

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../utility/loader";
-import { useQuery, queryClient } from "react-query";
+
 import PanelNavbar from "./panelNavbar";
 import { Link } from "react-router-dom";
 
@@ -149,7 +149,7 @@ function Panel() {
           <p className="createdAt">{v.createdAt}</p>
 
           <div className="card-buttons">
-            <Link to={`/panel/${v._id}`}>
+            <Link to={`/vendor/${v._id}`}>
               <button className="single-btn">Details</button>
             </Link>
             <button

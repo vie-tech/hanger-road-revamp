@@ -18,6 +18,7 @@ import Admin from "../contact/admin"
 import Panel from "../contact/panel"
 import PanelNavbar from "../contact/panelNavbar"
 import SinglePanel from "../contact/singlePanel"
+import SingleContact from "../contact/singleContact"
 
 const Pages = () => {
   return (
@@ -38,7 +39,8 @@ const Pages = () => {
          
           <Route exact element={<PanelNavbar/>}>
           <Route path='/panel' element={<Panel/>} />
-          <Route path='/panel/:contactId' element={<SinglePanel/>} />
+          <Route path='/panel/:vendorId' element={<SinglePanel/>} />
+          <Route path='/vendor/:contactId' element={<SingleContact/>} />
           </Route>
         </Routes>
         <Footer />
