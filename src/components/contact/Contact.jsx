@@ -4,6 +4,7 @@ import Back from "../common/Back";
 import "./contact.css";
 import swal from "sweetalert";
 
+
 const Contact = () => {
 const [formData, setFormData] = useState({
   name: "",

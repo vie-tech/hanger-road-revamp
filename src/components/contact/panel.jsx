@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../utility/loader";
-
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import PanelNavbar from "./panelNavbar";
 import { Link } from "react-router-dom";
 
@@ -145,10 +145,8 @@ function Panel() {
           <p>{v.email}</p>
           <h2>Subject</h2>
           <p>{v.subject}</p>
-          <h2>Content</h2>
-          <p>{v.content}</p>
-          <p>Created:</p>
-          <p className="createdAt">{v.createdAt}</p>
+          <h2>Time Sent:</h2>
+          <p className="createdAt">{formatDistanceToNow(new Date(v.createdAt), {addSuffix: true})}</p>
 
           <div className="card-buttons">
             <Link to={`/vendor/${v._id}`}>
@@ -183,6 +181,8 @@ function Panel() {
           <p>{v.email}</p>
           <h2>Phone:</h2>
           <p>{v.phone}</p>
+          <h2>Time Sent:</h2>
+          <p className="createdAt">{formatDistanceToNow(new Date(v.createdAt), {addSuffix: true})}</p>
 
           <div className="card-buttons">
             <Link to={`/panel/${v._id}`}>
