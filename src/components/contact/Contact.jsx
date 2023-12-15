@@ -12,6 +12,10 @@ const [formData, setFormData] = useState({
   content: ""
 })
 
+const [error, setError] = useState('')
+const [emptyFields, setEmptyFields] = useState([])
+
+
 const handleChange = (e) => {
   const { name, value } = e.target;
   setFormData((prevFormData) => ({
@@ -33,6 +37,8 @@ async function handleSubmit(event) {
       body: JSON.stringify(formData),
     });
 
+    const json = await response.json()
+    
     if (response.ok) {
       swal(
         "Message Successfully sent",
@@ -47,14 +53,19 @@ async function handleSubmit(event) {
         subject: "",
         content: "",
       });
-    } else {
-      const errorData = await response.json();
-      console.error("Error:", errorData);
+
+      setError('')
+    } 
+    if(!response.ok){
+      setError(json.mssg)
+      setEmptyFields(json.emptyFields)
     }
   } catch (error) {
     console.error("Fetch error:", error);
   }
-}
+} 
+
+console.log(emptyFields)
 
 
   return (
@@ -62,8 +73,10 @@ async function handleSubmit(event) {
       <section className="contact mb">
         <Back name="Contact" title={`Contact Us`} cover={img} />
         <div className="container">
+      
           <form onSubmit={handleSubmit}>
             <h4>Fillup The Form</h4> <br />
+            { emptyFields.length > 0 ? (<p className="error-message">{error}</p>) : (<p></p>)}
             <div>
               <input
                 type="text"
@@ -71,6 +84,7 @@ async function handleSubmit(event) {
                 name="name"
                 onChange={handleChange}
                 value={formData.name}
+                className={emptyFields.includes('Name') ? "error" : ""}
               />
               <input
                 type="text"
@@ -78,6 +92,7 @@ async function handleSubmit(event) {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                className={emptyFields.includes('Email') ? "error" : ""}
               />
             </div>
             <input
@@ -85,13 +100,16 @@ async function handleSubmit(event) {
               placeholder="Subject"
                name="subject"
                value={formData.subject}
-               onChange={handleChange}  />
+               onChange={handleChange} 
+               className={emptyFields.includes('Subject') ? "error" : ""} />
             <textarea 
             cols="30" 
             rows="10" 
             name="content"
             value={formData.content}
-            onChange={handleChange}></textarea>
+            onChange={handleChange}
+            className={emptyFields.includes('Content') ? "error" : ""}
+            ></textarea>
             <button>Submit Request</button>
           </form>
         </div>

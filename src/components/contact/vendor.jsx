@@ -14,6 +14,8 @@ const Vendor = () => {
     website: ""
   });
 
+  const [error , setError] = useState('')
+  const [emptyFields, setEmptyFields]= useState([])
   const handleChange = async (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({
@@ -62,15 +64,18 @@ const Vendor = () => {
           phone: "",
           company: "",
         });
-      } else {
-        const errorData = await response.json();
-        console.error("Error:", errorData);
+      } if(!response.ok) {
+        const json = await response.json();
+        setError(json.mssg)
+        setEmptyFields(json.emptyFields)
       }
     } catch (error) {
       console.error("Fetch error:", error);
     }
   }
 
+  console.log(error)
+  console.log(emptyFields)
   return (
     <>
       <section className="contact mb">
