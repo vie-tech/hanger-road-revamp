@@ -36,12 +36,12 @@ const Pages = () => {
           <Route path='/civil construction services' element={<Civil/>} />
           <Route path='/vendor-registration-form' element={<Vendor/>} />
           <Route path='/admin-panel' element={<Admin/>} />
-         
           <Route exact element={<PanelNavbar/>}>
           <Route path='/panel' element={<Panel/>} />
-          <Route path='/panel/:vendorId' element={<SinglePanel/>} />
-          <Route path='/vendor/:contactId' element={<SingleContact/>} />
+          <Route path='/panel/vendor-details/:vendorId' element={<SinglePanel/>} />
+          <Route path='/panel/contact-details/:contactId' element={<SingleContact />} />
           </Route>
+         
         </Routes>
         <Footer />
       

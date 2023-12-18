@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
 import { useQuery } from "react-query";
 import "./singlePanel.css"
+import PanelNavbar from "./panelNavbar";
 
-function SinglePanel() {
+
+function SinglePanel({vendorCount, contactCount}) {
   const { vendorId } = useParams();
-  const [singleData, setSingleData] = useState();
+  const [singleData, setSingleData] = useState("");
 
   const fetchSingleData = async () => {
     const token = localStorage.getItem("authToken");
@@ -39,12 +41,12 @@ function SinglePanel() {
 
   
 
-  console.log(singleData)
   const {isLoading} = useQuery('singleData', fetchSingleData, {
     refetchInterval: 120000,
     refetchIntervalInBackground: true,
   })
   return  <>
+
   {singleData && (
         <div className="card-container">
           <div className="info-card">
@@ -71,6 +73,7 @@ function SinglePanel() {
           </div>
         </div>
       )}
+
 </>
 }
 

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Loader from "../utility/loader";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import PanelNavbar from "./panelNavbar";
 import { Link } from "react-router-dom";
+import SinglePanel from "./singlePanel";
 
 import "./panel.css";
 
@@ -10,81 +11,72 @@ function Panel() {
   const [adminContactData, setAdminContactData] = useState("");
   const [adminVendorData, setAdminVendorData] = useState("");
   const [showVendor, setShowVendor] = useState(false);
-  const [deletedAction, setDeletedAction] = useState(false)
-
-
-  useEffect(()=>{
-    const fetchAdminData = async () => {
-      const token = localStorage.getItem("authToken");
-      if (!token) {
-        console.log("Unathorized access");
-        return;
-      }
+  const [deletedAction, setDeletedAction] = useState(false);
   
-      try {
-        const response = await fetch(
-          "https://hri-backend-server.onrender.com/allContacts",
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `${token}`,
-            },
-          }
-        );
-  
-        if (response.ok) {
-          const dataFromContactServer = await response.json();
-          setAdminContactData(dataFromContactServer);
-          setDeletedAction(prev=>!prev)
-        } else {
-          console.error(
-            "Cannot login into server and access contacts from database"
-          );
+ 
+
+ const abortControllerRef = useRef(new AbortController());
+ useEffect(() => {
+  const fetchData = async () => {
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      console.log("Unauthorized access");
+      return;
+    }
+
+    try {
+      abortControllerRef.current = new AbortController();
+      const { signal } = abortControllerRef.current;
+
+      const contactResponse = await fetch(
+        "https://hri-backend-server.onrender.com/allContacts",
+        {
+          signal,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+          },
         }
-      } catch (error) {
+      );
+
+      const vendorResponse = await fetch(
+        "https://hri-backend-server.onrender.com/allVendors",
+        {
+          signal,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `${token}`,
+          },
+        }
+      );
+
+      if (contactResponse.ok && vendorResponse.ok) {
+        const contactData = await contactResponse.json();
+        const vendorData = await vendorResponse.json();
+
+        setAdminContactData(contactData);
+        setAdminVendorData(vendorData);
+        setDeletedAction((prev) => !prev);
+      
+      } else {
+        console.error("Failed to fetch data");
+      }
+    } catch (error) {
+      if (error.name === "AbortError") {
+        console.log("Fetch operation was aborted");
+      } else {
         console.error(error.message);
       }
-    };
+    }
+  };
 
-    const fetchVendorData = async () => {
-      const token = localStorage.getItem("authToken");
-      if (!token) {
-        console.log("Unathorized access");
-        return;
-      }
-  
-      try {
-        const response = await fetch(
-          "https://hri-backend-server.onrender.com/allVendors",
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `${token}`,
-            },
-          }
-        );
-  
-        if (response.ok) {
-          const dataFromVendorServer = await response.json();
-          setAdminVendorData(dataFromVendorServer);
-          setDeletedAction(prev=>!prev)
-        } else {
-          console.error(
-            "Cannot login into server and access vendors from database"
-          );
-        }
-      } catch (error) {
-        console.error(error.message);
-      }
-    };
-  
-    fetchAdminData()
-    fetchVendorData()
-  
-  }, [deletedAction])
+  fetchData();
 
-  
-  
+  // Cleanup function
+  return () => {
+    abortControllerRef.current.abort();
+  };
+}, [deletedAction]);
   const deleteVendor = async (data) => {
     const token = localStorage.getItem("authToken");
     const response = await fetch(
@@ -99,7 +91,7 @@ function Panel() {
     );
     if (response.ok) {
       console.log("You have deleted a vendor ticket");
-      setDeletedAction(prev=>!prev)
+      setDeletedAction((prev) => !prev);
     } else if (!response.ok) {
       console.log("Could not delete vendor ticket");
     }
@@ -119,15 +111,11 @@ function Panel() {
     );
     if (response.ok) {
       console.log("You have deleted a Contact ticket");
-      setDeletedAction(prev=>!prev)
+      setDeletedAction((prev) => !prev);
     } else if (!response.ok) {
       console.log("Could not delete Contact ticket");
     }
   };
-
- 
-
- 
 
   const contactContent =
     adminContactData &&
@@ -146,10 +134,12 @@ function Panel() {
           <h2>Subject</h2>
           <p>{v.subject}</p>
           <h2>Time Sent:</h2>
-          <p className="createdAt">{formatDistanceToNow(new Date(v.createdAt), {addSuffix: true})}</p>
+          <p className="createdAt">
+            {formatDistanceToNow(new Date(v.createdAt), { addSuffix: true })}
+          </p>
 
           <div className="card-buttons">
-            <Link to={`/vendor/${v._id}`}>
+            <Link to={`/panel/contact-details/${v._id}`}>
               <button className="single-btn">Details</button>
             </Link>
             <button
@@ -158,7 +148,7 @@ function Panel() {
                 deleteContact(v._id);
               }}
             >
-              Delete
+              Resolved
             </button>
           </div>
         </div>
@@ -182,10 +172,12 @@ function Panel() {
           <h2>Phone:</h2>
           <p>{v.phone}</p>
           <h2>Time Sent:</h2>
-          <p className="createdAt">{formatDistanceToNow(new Date(v.createdAt), {addSuffix: true})}</p>
+          <p className="createdAt">
+            {formatDistanceToNow(new Date(v.createdAt), { addSuffix: true })}
+          </p>
 
           <div className="card-buttons">
-            <Link to={`/panel/${v._id}`}>
+            <Link to={`/panel/vendor-details/${v._id}`}>
               <button className="single-btn">Details</button>
             </Link>
             <button
@@ -194,24 +186,27 @@ function Panel() {
                 deleteVendor(v._id);
               }}
             >
-              Delete
+              Resolved
             </button>
           </div>
         </div>
       );
     });
-
+   
+   
   return (
     <>
       <section>
-        <PanelNavbar showVendor={showVendor} setShowVendor={setShowVendor} />
+        <PanelNavbar
+          showVendor={showVendor}
+          setShowVendor={setShowVendor}
+         
+        />
 
-        
-          <section className="panel-section">
-            {contactContent && contactContent}
-            {vendorContent && vendorContent}
-          </section>
-       
+        <section className="panel-section">
+          {contactContent && contactContent}
+          {vendorContent && vendorContent}
+        </section>
       </section>
     </>
   );

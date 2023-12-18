@@ -34,10 +34,13 @@
   .admin-navlinks p {
     color: white; /* Customize link color */
     text-decoration: none;
-    padding: 10px; /* Adjust padding for links */
+    padding: 6px; /* Adjust padding for links */
     cursor: pointer;
     background-color: crimson;
     border-radius: 5px;
+    font-size: 13px;
+    width: auto;
+    flex-wrap: nowrap;
   }
   
   .admin-navlinks p:hover {
