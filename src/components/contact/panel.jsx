@@ -62,11 +62,9 @@ function Panel() {
         console.error("Failed to fetch data");
       }
     } catch (error) {
-      if (error.name === "AbortError") {
-        console.log("Fetch operation was aborted");
-      } else {
+      
         console.error(error.message);
-      }
+  
     }
   };
 
