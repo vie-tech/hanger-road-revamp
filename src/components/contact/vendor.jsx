@@ -74,8 +74,7 @@ const Vendor = () => {
     }
   }
 
-  console.log(error)
-  console.log(emptyFields)
+
   return (
     <>
       <section className="contact mb">
