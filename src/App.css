@@ -19,16 +19,15 @@ section{
   padding: 10px;
   
 }
+li:hover{
+  color: #27ae60
+}
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-a {
-  text-decoration: none;
-  color: #000;
-  text-transform: capitalize;
-}
+
 ul {
   list-style-type: none;
 }
@@ -52,7 +51,6 @@ button i {
 .heading h1 {
   color: #2d3954;
   font-weight: 600;
-  text-transform: capitalize;
   font-size: 35px;
 }
 .heading p {

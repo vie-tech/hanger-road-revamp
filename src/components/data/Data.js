@@ -7,10 +7,6 @@ export const nav = [
     text: "About",
     path: "/about",
   },
-  {
-    text: "Services",
-    path: "/crude oil tank services",
-  },
 
   {
     text: "Client",
@@ -27,34 +23,34 @@ export const featured = [
     cover: "../images/hero/barrel.png",
     name: "CRUDE OIL TANK SERVICES",
     total: "122 Property",
-    link: "crude oil tank services",
+    link: "/crude oil tank services",
     left: true
   },
   {
     cover: "../images/hero/inspection.png",
     name: "INSPECTION & TEST SERVICES",
     total: "155 Property",
-    link: "inspection and test services",
+    link: "/inspection and test services",
     left: true
   },
   {
     cover: "../images/hero/waste.png",
     name: "WASTE-MANAGEMENT",
     total: "300 Property",
-    link: "waste management services",
+    link: "/waste management services",
   },
   {
     cover: "../images/hero/engineering.png",
     name: "MARINE SERVICES",
     total: "80 Property",
-    link: "marine services",
+    link: "/marine services",
     left: false
   },
   {
     cover: "../images/hero/h6.png",
     name: "CIVIL CONTRUCTION",
     total: "80 Property",
-    link: "civil construction services",
+    link: "/civil construction services",
     left: false
   },
 ];

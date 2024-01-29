@@ -9,20 +9,20 @@ const Awards = () => {
     <>
       <section className="awards padding">
         <div className="container">
-          <motion.div 
-          className="awards-heading"
-          initial={{ opacity: 0, scale: 1.3 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.6,
-                }}
-                viewport={{ once: true }}>
-          <Heading
-            title="Our unique skilled personnel allow us to provide a wide range of engineering and technical support for the oil and gas industry. Our engineering and technical support services covers both offshore and onshore."
-            subtitle="Our Accolades"
-          />
+          <motion.div
+            className="awards-heading"
+            initial={{ opacity: 0, scale: 1.3 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.6,
+            }}
+            viewport={{ once: true }}
+          >
+            <Heading
+              title="Our unique skilled personnel allow us to provide a wide range of engineering and technical support for the oil and gas industry. Our engineering and technical support services covers both offshore and onshore."
+              subtitle="Our Accolades"
+            />
           </motion.div>
-          
 
           <div className="content grid4 mtop">
             {awards.map((val, index) => (

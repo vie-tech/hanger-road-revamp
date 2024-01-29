@@ -3,16 +3,14 @@ import Awards from "./awards/Awards"
 import Featured from "./featured/Featured"
 import Hero from "./hero/Hero"
 import Location from "./location/Location"
-import Price from "./price/Price"
-import Recent from "./recent/Recent"
-import Team from "./team/Team"
+import Industry from "./industry/Industry"
 import { Helmet } from "react-helmet"
 
 const Home = () => {
   return (
     <>
-    <body className="total-container">
-    <Helmet>
+      <body className="total-container">
+        <Helmet>
           <title>Hanger Road International</title>
           <meta
             name="description"
@@ -27,18 +25,16 @@ const Home = () => {
             content="oil and gas, waste treatment, crude storage, vessel tanks, natural gas oil, gas exploration, Environmental Restoration and Remediation, remote, sensing, technology, remote sensing technology Inspection and Test Services, Short Range Wave Ultrasonic Testing, SRUT, Tank Calibration, Tank Cleaning, Oil Spill Clean-up and Recovery, Remediation and Rehabilitation of Past Impacted Sites, Oily Waste Handling and Management from Collection to Disposal, Anchor Handling Tug Supply (AHTS) vessels, Platform Supply Vessels (PSV), Multi-purpose Vessels, Mooring Boats, Diving Support Vessels, Barges, Offshore Support Vessels"
           />
         </Helmet>
-    <Hero />
-    <Awards />
-      <Featured />
-     
-      <Location />
-    
-    </body>
-     {/* <Recent /> */}
-     {/*   <Team /> */}
-    {/*   <Price /> */}
+        <Hero />
+        <Awards />
+
+        <Featured />
+        <Industry />
+        <Location />
+      </body>
+
     </>
-  )
+  );
 }
 
 export default Home

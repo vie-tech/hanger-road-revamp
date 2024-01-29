@@ -28,11 +28,7 @@ const Services = () => {
           />
         </Helmet>
         <div className="inspection-service">
-          <Back
-            name="Services"
-            title="Crude Oil Tank Services"
-            cover={img}
-          />
+          <Back name="Services" title="Crude Oil Tank Services" cover={img} />
         </div>
 
         <div className="service2-content1">
@@ -51,7 +47,35 @@ const Services = () => {
               Our automated tank cleaning system de-sludge recovers marketable
               oil, and clean tanks in a single closed-looped system in the
               safest and most environmentally friendly way possible. It is
-              suitable for both floating and fixed roof tanks.
+              suitable for both floating and fixed roof tanks.Hangar Road
+              International Limited is West Africa's leading provider of
+              automated tank cleaning solutions for fixed and floating roof
+              above-ground crude storage tanks. With our state-of-the-art
+              automated tank cleaning equipment, we offer efficient desludging
+              and crude recovery services for both fixed and floating roof
+              tanks. Our cutting-edge technology ensures minimal downtime,
+              reduced costs, and maximum safety, all while prioritizing
+              environmental sustainability. At HRI, we understand the importance
+              of maintaining clean and efficient storage tanks in the oil and
+              gas industry. Our automated tank cleaning equipment utilizes
+              advanced techniques and processes in a closed looped system to
+              remove sludge and recover valuable crude oil, optimizing the
+              storage capacity and operational efficiency of crude storage
+              tanks. By minimizing manual labor and human intervention, our
+              equipment ensures a safer working environment for personnel. We
+              are distinguished by our commitment to environmental
+              responsibility. Our automated tank cleaning technology is designed
+              to minimize waste generation and reduce the environmental impact
+              associated with traditional tank cleaning methods. Our team of
+              professionals will work directly with you to build tailored
+              solutions that match your individual needs, whether they are fixed
+              or floating roof above-ground crude storage tanks. We pride
+              ourselves on delivering exceptional results, on time and within
+              budget. Experience the future of tank cleaning with HRI. Feel free
+              to contact us today to learn more about our automated tank
+              cleaning equipment and how we can help optimize the performance of
+              your crude storage tanks while prioritizing environmental
+              sustainability.
             </p>
           </motion.div>
 
