@@ -123,13 +123,13 @@ export const awards = [
   },
   {
     icon: <i class="fa-solid fa-lightbulb"></i>,
-    num: " 100+",
+    num: " 30+",
     name: "Projects Completed",
   },
   {
     icon: <i class="fa-solid fa-user"></i>,
     num: "50+",
-    name: "Skilled staff",
+    name: "Skilled staffs",
   },
 ];
 export const location = [
