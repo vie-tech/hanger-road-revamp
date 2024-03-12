@@ -324,7 +324,7 @@ export const footer = [
     title: "LAYOUTS",
     text: [
       { list: "2B Lawrence Omole Close Off Sinari Daranijo VI, Lagos." },
-      { list: "info2@hangerroadinternational.com" },
+      { list: "info2@hangarroadinternational.com" },
       { list: "+234 (01) 2772332" },
     ],
   },
